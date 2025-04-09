@@ -9,6 +9,7 @@ void Observed::RemoveObserver(Observer *observer)
 {
 	auto it = std::remove(_observers.begin(), _observers.end(), observer);
 	_observers.erase(it, _observers.end());
+	observer->delObserved();
 }
 void Observed::warning(const std::string &message) const
 {
