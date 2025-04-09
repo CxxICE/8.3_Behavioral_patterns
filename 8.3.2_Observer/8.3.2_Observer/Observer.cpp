@@ -9,9 +9,17 @@ void Observer::addObserved(Observed *observed)
 	_observed = observed;
 }
 
+void Observer::delObserved()
+{
+	_observed = nullptr;
+}
+
 Observer::~Observer()
 {
-	_observed->RemoveObserver(this);
+	if (_observed)
+	{
+		_observed->RemoveObserver(this);
+	}	
 }
 
 

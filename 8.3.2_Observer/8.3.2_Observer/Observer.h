@@ -14,7 +14,8 @@ public:
 	virtual void onError(const std::string &message);
 	virtual void onFatalError(const std::string &message);
 	void addObserved(Observed *observed);
+	void delObserved();
 	~Observer();
 private:
-	Observed *_observed;
+	Observed *_observed = nullptr;
 };

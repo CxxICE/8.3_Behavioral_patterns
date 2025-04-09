@@ -13,6 +13,7 @@ public:
 	void warning(const std::string &message) const;
 	void error(const std::string &message) const;
 	void fatalError(const std::string &message) const;
+	~Observed();
 private:
 	std::vector<Observer*> _observers;
 };

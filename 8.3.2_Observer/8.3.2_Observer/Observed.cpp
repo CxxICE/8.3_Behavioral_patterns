@@ -31,3 +31,11 @@ void Observed::fatalError(const std::string &message) const
 		el->onFatalError(message);
 	}
 }
+
+Observed::~Observed()
+{
+	for (const auto& el : _observers)
+	{
+		el->delObserved();
+	}
+}
